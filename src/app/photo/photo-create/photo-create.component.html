@@ -1,0 +1,30 @@
+<h2>Tao moi photo </h2>
+
+<div *ngIf="successMessage" class="alert alert-success">
+  <p>{{successMessage}}</p>
+</div>
+
+<div *ngIf="failMessage" class="alert alert-danger">
+  <p>{{failMessage}}</p>
+</div>
+
+<form #photoForm = "ngForm" (ngSubmit)="addPhoto(photoForm)">
+  <label>
+      Title:
+    <input type="text" name="title" ngModel>
+  </label>
+  <br>
+  <label>
+    Url:
+    <input type="text" name="url" ngModel>
+  </label>
+  <br>
+  <label>
+    ThumbnailUrl:
+    <input type="text" name="thumbnailUrl" ngModel>
+  </label>
+  <br>
+  <div>
+    <button type="submit">Submit</button>
+  </div>
+</form>

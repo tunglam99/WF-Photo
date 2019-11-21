@@ -1,0 +1,33 @@
+<h2 xmlns="http://www.w3.org/1999/html">Chỉnh sửa ảnh</h2>
+
+<div *ngIf="successMessage" class="alert alert-success">
+  <p>{{successMessage}}</p>
+</div>
+
+<div *ngIf="failMessage" class="alert alert-danger">
+  <p>{{failMessage}}</p>
+</div>
+
+<form #photoForm = "ngForm" (ngSubmit)="updatePhoto(photoForm)">
+  <label>
+    <input type="hidden" [(ngModel)]="photo.id" name="id" ngModel class="form-control"/>
+  </label>
+  <br>
+  <label>
+   Title:
+  <input type="text" [(ngModel)]="photo.title" name="title" ngModel class="form-control">
+  </label>
+  <br>
+  <label>
+    Url:
+    <input type="text" [(ngModel)]="photo.url" name="url" ngModel class="form-control">
+  </label>
+  <br>
+  <label>
+    ThumbnailUrl:
+    <input type="text" [(ngModel)]="photo.thumbnailUrl" name="thumbnailUrl" ngModel class="form-control">
+  </label>
+  <div>
+    <button type="submit"> Submit </button>
+  </div>
+</form>

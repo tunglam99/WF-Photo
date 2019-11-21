@@ -1,0 +1,29 @@
+<div class="text-center">
+  <h2>Bạn có muốn xóa không ?</h2>
+</div>
+
+<div *ngIf="successMessage" class="alert alert-success">
+  <p>{{successMessage}}</p>
+</div>
+<div *ngIf="failMessage" class="alert alert-danger">
+  <p>{{failMessage}}</p>
+</div>
+
+<label class="col">
+  Title:
+  {{photo.title}}
+</label>
+<br>
+<label class="col">
+  Url:
+  <span>{{photo.url}}</span>
+</label>
+<br>
+<label class="col">
+  ThumbnailUrl:
+  <span>{{photo.thumbnailUrl}}</span>
+</label>
+<br>
+<div class="col">
+  <button class="btn btn-info" type="submit" (click)="deletePhoto()">Delete</button>
+</div>
